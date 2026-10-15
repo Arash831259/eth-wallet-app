@@ -1,0 +1,388 @@
+:root {
+  --bg: #0f1220;
+  --card: #181c30;
+  --border: #2a3050;
+  --text: #e8eaf6;
+  --muted: #8b92b8;
+  --accent: #6c7bff;
+  --accent-hover: #8290ff;
+  --ok: #3ddc97;
+  --warn: #ffb547;
+  --err: #ff6b7a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, Vazirmatn, Tahoma, system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 32px 16px 48px;
+}
+
+.stack {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── Header ───────────────────────────────────────────── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+h1 {
+  font-size: 1.4rem;
+  margin: 0 0 4px;
+}
+
+h2 {
+  font-size: 1.05rem;
+  margin: 0 0 16px;
+}
+
+h3 {
+  font-size: 0.95rem;
+  margin: 0 0 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: rgba(108, 123, 255, 0.15);
+  color: var(--accent);
+  border: 1px solid rgba(108, 123, 255, 0.4);
+}
+
+.lang-switch {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.lang-switch button {
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  padding: 6px 12px;
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.lang-switch button.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* ── Cards ────────────────────────────────────────────── */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card h2 {
+  margin-bottom: 0;
+}
+
+.connect {
+  text-align: center;
+}
+
+.connect p {
+  color: var(--muted);
+  margin: 4px 0;
+}
+
+.connector-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ── Info rows ────────────────────────────────────────── */
+.info {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2px 16px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+}
+
+.row + .row {
+  border-top: 1px solid var(--border);
+}
+
+.label {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.value.ok {
+  color: var(--ok);
+}
+
+.value.warn {
+  color: var(--warn);
+}
+
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+/* ── Forms ────────────────────────────────────────────── */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form label {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 0.9rem;
+  outline: none;
+}
+
+input:focus {
+  border-color: var(--accent);
+}
+
+input:disabled {
+  opacity: 0.6;
+}
+
+.chips {
+  display: flex;
+  gap: 8px;
+}
+
+.chip {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  padding: 4px 14px;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.chip.active {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: rgba(108, 123, 255, 0.12);
+}
+
+.chip:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* ── Buttons ──────────────────────────────────────────── */
+.btn {
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s, opacity 0.15s;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn.primary:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.btn.warning {
+  background: var(--warn);
+  color: #1a1400;
+}
+
+.btn.ghost {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  font-size: 0.9rem;
+  padding: 8px 16px;
+}
+
+.btn.ghost:hover {
+  color: var(--text);
+}
+
+/* ── Status ───────────────────────────────────────────── */
+.status {
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: start;
+}
+
+.status a {
+  color: inherit;
+  font-size: 0.85rem;
+  text-decoration: underline;
+}
+
+.status.error {
+  background: rgba(255, 107, 122, 0.12);
+  color: var(--err);
+  border: 1px solid rgba(255, 107, 122, 0.4);
+}
+
+.status.success {
+  background: rgba(61, 220, 151, 0.12);
+  color: var(--ok);
+  border: 1px solid rgba(61, 220, 151, 0.4);
+}
+
+.status.pending {
+  background: rgba(255, 181, 71, 0.12);
+  color: var(--warn);
+  border: 1px solid rgba(255, 181, 71, 0.4);
+}
+
+.hint {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* ── Live event feed ──────────────────────────────────── */
+.feed {
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ok);
+  animation: pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.feed ul {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.feed li {
+  display: grid;
+  grid-template-columns: 76px 1fr auto;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  font-size: 0.85rem;
+}
+
+.feed li.in .amount {
+  color: var(--ok);
+}
+
+.feed li.out .amount {
+  color: var(--warn);
+}
+
+.feed li .dir {
+  color: var(--muted);
+}
+
+.feed li a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.empty {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 12px 0 0;
+}
+
+.footer-note {
+  margin: 8px 0 0;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .live-dot {
+    animation: none;
+  }
+}
