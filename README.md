@@ -2,10 +2,8 @@
 
 A small, production-style dApp that connects a browser wallet, shows balances, and sends **ETH** and **ERC-20** tokens on the **Sepolia testnet** — with live `Transfer` event listening and an **English / Persian (RTL)** UI.
 
-**🔗 Live demo:** https://YOUR-APP.vercel.app  <!-- replace after deploying -->
-
 ![App screenshot](docs/screenshot.png)
-
+![Successful send](docs/screenshot-send.png)
 ## Features
 
 - **Wallet connection** via injected wallets (MetaMask, Rabby, …) with EIP-6963 discovery
